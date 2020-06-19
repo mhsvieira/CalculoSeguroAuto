@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BAFDE389-7FE9-4967-9094-2357387D1348}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6666CCDC-02CB-411A-8C59-9FA1186AC1FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{AA3021D1-9F7F-434A-B243-B2E1513D0DD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{D6A3AF94-8961-4153-84AD-C5ECD5016E35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webApi", "webApi", "{97FC377A-EC8A-4528-9B01-ED18EDF4CD6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeguroAutomovel", "SeguroAutomovel\SeguroAutomovel.csproj", "{9E2F32B7-27DD-45A5-89CE-D27CD62F754C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeguroAutomovelTest", "SeguroAutomovelTest\SeguroAutomovelTest.csproj", "{774D38AB-7A54-45FD-9E50-344E703E74B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E2F32B7-27DD-45A5-89CE-D27CD62F754C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E2F32B7-27DD-45A5-89CE-D27CD62F754C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E2F32B7-27DD-45A5-89CE-D27CD62F754C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E2F32B7-27DD-45A5-89CE-D27CD62F754C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774D38AB-7A54-45FD-9E50-344E703E74B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774D38AB-7A54-45FD-9E50-344E703E74B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774D38AB-7A54-45FD-9E50-344E703E74B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774D38AB-7A54-45FD-9E50-344E703E74B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97FC377A-EC8A-4528-9B01-ED18EDF4CD6D} = {BAFDE389-7FE9-4967-9094-2357387D1348}
+		{9E2F32B7-27DD-45A5-89CE-D27CD62F754C} = {97FC377A-EC8A-4528-9B01-ED18EDF4CD6D}
+		{774D38AB-7A54-45FD-9E50-344E703E74B6} = {6666CCDC-02CB-411A-8C59-9FA1186AC1FF}
+	EndGlobalSection
+EndGlobal

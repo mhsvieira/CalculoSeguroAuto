@@ -1,0 +1,2 @@
+para instalar -> npm install -g json-server
+para rodar -> json-server --watch proponentes.json

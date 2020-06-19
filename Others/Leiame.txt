@@ -1,0 +1,4 @@
+API utiliza autenticação OAuth bearer
+
+user: userauto
+password: zA504yJ!

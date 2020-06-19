@@ -1,0 +1,34 @@
+{
+   "Proponentes":[
+      {
+         "id":1,
+         "nome":"ANDREA NEVES",
+         "cpf":"455.554.454-50",
+         "dataNascimento":"2000-05-04T00:00:00",
+         "cepPernoite":"17600-000",
+         "placa":"NBV-7023",
+         "modelo":"FIAT PUNTO 1.0 4P 2010/2010",
+         "valorveiculo":10000.00
+      },
+      {
+         "id":2,
+         "nome":"LUCIANO FERREIRA DA SILVA",
+         "cpf":"456.789.012-34",
+         "dataNascimento":"1960-02-03T00:00:00",
+         "cepPernoite":"55400-000",
+         "placa":"ABC-1221",
+         "modelo":"FIAT PALIO FIRE 1.0 4P 2005/2005",
+         "valorveiculo":8000.00
+      },
+      {
+         "id":3,
+         "nome":"ROBERTO AMARAL DE SOUZA",
+         "cpf":"123.456.789-01",
+         "dataNascimento":"1980-01-01T00:00:00",
+         "cepPernoite":"07090-000",
+         "placa":"AAA-0000",
+         "modelo":"FORD FIESTA GL 1.0 4P 2001/2001",
+         "valorveiculo":6500.00
+      }
+   ]
+}

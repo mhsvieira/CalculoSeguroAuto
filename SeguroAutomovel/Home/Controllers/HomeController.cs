@@ -13,8 +13,8 @@ namespace SeguroAutomovel.Home.Controllers
     public class HomeController : ApiController
     {
         [HttpGet]
-        [Route("pesquisar/{id:int}")]
-        // api/seguroauto/v1/pesquisar/Id
+        [Route("pesquisar/id/{id:int}")]
+        // api/seguroauto/v1/pesquisar/id/Id
         public HttpResponseMessage PesquisarSeguroAuto(int id)
         {
             if (id <= 0)
@@ -39,8 +39,39 @@ namespace SeguroAutomovel.Home.Controllers
         }
 
         [HttpGet]
-        [Route("pesquisar/{datainicio}/{datafinal}")]
-        // api/seguroauto/v1/pesquisar/datainicio/datafinal
+        [Route("pesquisar/cpf/{cpf}")]
+        // api/seguroauto/v1/pesquisar/cpf/cpf
+        public HttpResponseMessage PesquisarSeguroAuto(string cpf)
+        {
+            if (string.IsNullOrEmpty(cpf))
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Cpf não informado");
+
+            try
+            {
+
+                cpf = cpf.PadLeft(11, '0');
+
+                cpf = cpf.Substring(0, 3) + "." + cpf.Substring(3, 3) + "." + cpf.Substring(6, 3) + "-" + cpf.Substring(9, 2);
+
+                OperacoesBD operacao = new OperacoesBD();
+
+                List<Apolice> listApolices = operacao.PesquisarSeguroAuto(cpf);
+
+                if (listApolices.Count > 0)
+                    return Request.CreateResponse(HttpStatusCode.OK, listApolices);
+
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao pesquisar apólice");
+
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message + " - Erro método PesquisarSeguroAuto");
+            }
+        }
+
+        [HttpGet]
+        [Route("pesquisar/data/{datainicio}/{datafinal}")]
+        // api/seguroauto/v1/pesquisar/data/datainicio/datafinal
         public HttpResponseMessage PesquisarSeguroAuto(DateTime dataInicio, DateTime datafinal)
         {
             if (datafinal < dataInicio)

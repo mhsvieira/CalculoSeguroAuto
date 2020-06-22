@@ -256,6 +256,62 @@ namespace SeguroAutomovel.Home.DataAccess
             }
         }
 
+        public List<Apolice> PesquisarSeguroAuto(string cpf)
+        {
+            try
+            {
+                List<Apolice> listApolices = new List<Apolice>();
+
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "Select Id, Nome, Cpf, DataNascimento, DataSeguro, InicioVigencia, FinalVigencia, CepPernoite, Placa, Modelo, ValorIS, PremioTotal, Status " +
+                                              " from Apolice Where Cpf = @Cpf Order by Id";
+                        command.Parameters.AddWithValue("@Cpf", cpf);
+
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            Apolice apolice = new Apolice()
+                            {
+                                Id = Convert.ToInt32(reader["Id"]),
+                                Nome = reader["Nome"].ToString(),
+                                Cpf = reader["Cpf"].ToString(),
+                                DataNascimento = Convert.ToDateTime(reader["DataNascimento"]),
+                                DataSeguro = Convert.ToDateTime(reader["DataSeguro"]),
+                                InicioVigencia = Convert.ToDateTime(reader["InicioVigencia"]),
+                                FinalVigencia = Convert.ToDateTime(reader["FinalVigencia"]),
+                                CepPernoite = reader["CepPernoite"].ToString(),
+                                Placa = reader["Placa"].ToString(),
+                                Modelo = reader["Modelo"].ToString(),
+                                ValorIS = Convert.ToDecimal(reader["ValorIS"]),
+                                PremioTotal = Convert.ToDecimal(reader["PremioTotal"]),
+                                Status = reader["Status"].ToString()
+                            };
+
+                            listApolices.Add(apolice);
+                        }
+                    }
+
+                    connection.Close();
+                }
+
+                if (listApolices.Count() > 0)
+                    return listApolices;
+
+                throw new Exception(" - Seguros não encontrados para o cpf informado ");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + " - Erro método PesquisarSeguroAuto");
+            }
+        }
+
         public Apolice gravarSeguroAuto(Apolice apolice)
         {
             try
